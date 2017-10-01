@@ -12,7 +12,7 @@ ${history_table_datetime_1}
 ${history_table_by_1}
 
 *** Test Cases ***
-Show Davy History
+First Davy History Record
     Open Browser    ${URL}    browser=chrome
     Click link    link=History
 #    Element Should Contain     id=${user_name}    DAVY
@@ -21,21 +21,41 @@ Show Davy History
 #    Element Should Contain     id=${wallet_balance}    500
     #Click Element id=${sdfsdf}
     #${tab_history_all}
-      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  14.00 น.
-      Element Should Contain  ${history_table_by_1}    Debit
-      Element Should Contain  ${history_amount_1}    1000
-      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  14.30 น.
-      Element Should Contain  ${history_table_by_1}    Coffee
-      Element Should Contain  ${history_amount_1}    30
-    Click Element id=${tab_history_deposite}
-      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  14.00 น.
-      Element Should Contain  ${history_table_by_1}    Debit
-      Element Should Contain  ${history_amount_1}    1000
-    Click Element id=${tab_history_withdraw}
-      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  14.30 น.
-      Element Should Contain  ${history_table_by_1}    Coffee
-      Element Should Contain  ${history_amount_1}    30
+      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  15.57 น.
+      Element Should Contain  ${history_table_by_1}    TopUp-Debit Card
+      Element Should Contain  ${history_amount_1}    500.00
+
+      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  15.57 น.
+      Element Should Contain  ${history_table_by_1}    TopUp-Card
+      Element Should Contain  ${history_amount_1}    1,000.00
+
+      Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  15.57 น.
+      Element Should Contain  ${history_table_by_1}    Paid
+      Element Should Contain  ${history_amount_1}    1,000.00
+
+  #  Click Element id=${tab_history_deposite}
+  #    Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  15.57 น.
+  #    Element Should Contain  ${history_table_by_1}    Debit
+  #    Element Should Contain  ${history_amount_1}    1000
+  #  Click Element id=${tab_history_withdraw}
+  #    Element Should Contain  ${history_table_datetime_1}    1 ต.ค. 2560  15.57 น.
+  #    Element Should Contain  ${history_table_by_1}    Coffee
+  #    Element Should Contain  ${history_amount_1}    30
       Capture Page Screenshot
     Close Browser
+
+#Second Davy History Record
+  #Open Browser    ${URL}    browser=chrome
+#  Click link    link=History
+
+#  Capture Page Screenshot
+  #Close Browser
+
+#Second Davy History Record
+  #Open Browser    ${URL}    browser=chrome
+#  Click link    link=History
+
+  #Capture Page Screenshot
+#  Close Browser
 
 #Show Pariyathida History
